@@ -23,6 +23,7 @@
     
     <properties>
         <torodb.engine.version>0.50.1-SNAPSHOT</torodb.engine.version>
+        <torodb.testing.version>0.1.0-SNAPSHOT</torodb.testing.version>
         
         <license.header.license>agpl</license.header.license>
         <license.header.project.name>ToroDB Server</license.header.project.name>
@@ -46,6 +47,11 @@
                 <artifactId>backend-derby</artifactId>
                 <version>${torodb.engine.version}</version>
             </dependency>
+            <dependency>
+                <groupId>com.torodb.testing</groupId>
+                <artifactId>postgres-junit-5</artifactId>
+                <version>${torodb.testing.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
     
@@ -57,4 +63,17 @@
             </plugin>
         </plugins>
     </build>
+    
+    <repositories>  
+        <repository>
+            <id>OSSRH</id>
+            <url>https://oss.sonatype.org/content/groups/public</url>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+        </repository>
+    </repositories>
 </project>

@@ -15,28 +15,58 @@
  * You should have received a copy of the GNU Affero General Public License
  * along with this program. If not, see <http://www.gnu.org/licenses/>.
  */
-
 package com.torodb.standalone;
 
-import static com.torodb.standalone.utils.RequireClientSupplier.BackendType.DERBY;
+import static com.torodb.standalone.utils.RequireClientSupplier.BackendType.POSTGRES;
 
+import com.google.common.collect.Iterables;
 import com.mongodb.MongoClient;
+import com.mongodb.client.MongoCollection;
 import com.torodb.standalone.utils.ClientSupplier;
-import com.torodb.standalone.utils.RequireClientSupplier;
-import org.bson.BsonDocument;
-import org.bson.BsonInt32;
+import org.bson.Document;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.platform.runner.JUnitPlatform;
 import org.junit.runner.RunWith;
+import com.torodb.standalone.utils.RequireClientSupplier;
+import org.bson.BsonDocument;
+import org.bson.BsonInt32;
 
 
+/**
+ *
+ */
 @RunWith(JUnitPlatform.class)
-@RequireClientSupplier(backend = DERBY)
-public class ServerServiceTest {
+@RequireClientSupplier(backend = POSTGRES, newForEachCase = false)
+public class ServerServiceIT {
 
   @Test
-  public void isRunning(ClientSupplier clientSupplier) {
+  public void someInserts(ClientSupplier clientSupplier) {
+    MongoClient client = clientSupplier.get();
+    MongoCollection<Document> collection = client.getDatabase("dbTest")
+        .getCollection("colTest");
+    for (int i = 0; i < 10; i++) {
+      collection.insertOne(new Document("i", i));
+    }
 
+    Assertions.assertEquals(10, collection.count());
+  }
+
+
+  @Test
+  public void createCollection(ClientSupplier clientSupplier) {
+    MongoClient client = clientSupplier.get();
+
+    client.getDatabase("aDb")
+        .createCollection("aCol");
+
+    Assertions.assertTrue(
+        Iterables.contains(
+            client.getDatabase("aDb").listCollectionNames(),
+            "aCol"
+        ),
+        "The created collection has not been found on the server"
+    );
   }
 
   @Test
@@ -46,5 +76,4 @@ public class ServerServiceTest {
     client.getDatabase("admin")
         .runCommand(new BsonDocument("ping", new BsonInt32(1)));
   }
-
 }
