@@ -27,7 +27,7 @@ before_cache:
 before_script:
   - export GIT_BRANCH=$TRAVIS_BRANCH
 
-script: mvn -Psafer -Pintegration -B -e -T 1C -Dcheckstyle.consoleOutput=false verify
+script: mvn -Psafer -Pintegration -B -e -T 1C -Dcheckstyle.consoleOutput=false --update-snapshots verify
 
 after_success:
   - |
