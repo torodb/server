@@ -1,4 +1,6 @@
-# ToroDB
+ToroDB
+======
+
 ToroDB is an open source project that turns your RDBMS into a
 MongoDB-compatible server, supporting the MongoDB query API and
 MongoDB's replication, but storing your data into a reliable and trusted
@@ -126,6 +128,15 @@ like:
 
 Please see [CONTRIBUTING][10].
 
+## Code QA
+ * Master branch: 
+[![Build Status](https://travis-ci.org/torodb/server.svg?branch=master)](https://travis-ci.org/torodb/server)
+[![Codacy Badge](https://api.codacy.com/project/badge/grade/ba76a3307733492c97c0dfc13beae2c0?branch=master)](https://www.codacy.com/app/torodb/server?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=torodb/server&amp;utm_campaign=Badge_Grade)
+[![Codacy Coverage](https://api.codacy.com/project/badge/coverage/ba76a3307733492c97c0dfc13beae2c0?branch=master)](https://www.codacy.com/app/torodb/server?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=torodb/server&amp;utm_campaign=Badge_Grade)
+ * Devel branch:
+[![Build Status](https://travis-ci.org/torodb/server.svg?branch=devel)](https://travis-ci.org/torodb/server)
+[![Codacy Badge](https://api.codacy.com/project/badge/grade/ba76a3307733492c97c0dfc13beae2c0?branch=devel)](https://www.codacy.com/app/torodb/server?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=torodb/server&amp;utm_campaign=Badge_Grade)
+[![Codacy Coverage](https://api.codacy.com/project/badge/coverage/ba76a3307733492c97c0dfc13beae2c0?branch=devel)](https://www.codacy.com/app/torodb/server?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=torodb/server&amp;utm_campaign=Badge_Grade)
 
 [1]: http://www.torodb.com
 [2]: http://www.postgresql.org
