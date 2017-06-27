@@ -4,7 +4,7 @@
     <parent>
         <groupId>com.torodb.server</groupId>
         <artifactId>server-pom</artifactId>
-        <version>0.50.1-SNAPSHOT</version>
+        <version>0.50.2-SNAPSHOT</version>
     </parent>
 
     <artifactId>server-main</artifactId>
@@ -74,6 +74,10 @@
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-slf4j-impl</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
         </dependency>
         <dependency>
             <groupId>com.typesafe.akka</groupId>
