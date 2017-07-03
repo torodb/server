@@ -25,6 +25,7 @@ import com.torodb.standalone.utils.ClientSupplier;
 import com.torodb.standalone.utils.RequireClientSupplier;
 import org.bson.BsonDocument;
 import org.bson.BsonInt32;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.platform.runner.JUnitPlatform;
 import org.junit.runner.RunWith;
@@ -40,6 +41,7 @@ public class ServerServiceTest {
   }
 
   @Test
+  @Disabled
   public void ping(ClientSupplier clientSupplier) {
     MongoClient client = clientSupplier.get();
 

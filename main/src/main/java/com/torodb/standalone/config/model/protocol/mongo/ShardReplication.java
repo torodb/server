@@ -21,11 +21,13 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import com.torodb.packaging.config.annotation.Description;
 import com.torodb.packaging.config.model.common.EnumWithDefault;
+import com.torodb.packaging.config.model.common.ListOfStringWithDefault;
 import com.torodb.packaging.config.model.common.StringWithDefault;
 import com.torodb.packaging.config.model.protocol.mongo.AbstractShardReplication;
 import com.torodb.packaging.config.model.protocol.mongo.Auth;
 import com.torodb.packaging.config.model.protocol.mongo.Role;
 import com.torodb.packaging.config.model.protocol.mongo.Ssl;
+import com.torodb.packaging.config.validation.NotEmptyListOfSrtingWithDefault;
 import com.torodb.packaging.config.validation.NotEmptySrtingWithDefault;
 
 import javax.validation.constraints.NotNull;
@@ -48,9 +50,9 @@ public class ShardReplication extends AbstractShardReplication {
   }
 
   @Description("config.mongo.replication.syncSource")
-  @NotEmptySrtingWithDefault
+  @NotEmptyListOfSrtingWithDefault
   @JsonProperty(required = true)
-  public StringWithDefault getSyncSource() {
+  public ListOfStringWithDefault getSyncSource() {
     return super.getSyncSource();
   }
 

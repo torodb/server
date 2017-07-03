@@ -11,7 +11,7 @@
     <artifactId>server-pom</artifactId>
     <packaging>pom</packaging>
     
-    <version>0.50.1-SNAPSHOT</version>
+    <version>0.50.2-SNAPSHOT</version>
 
     <name>ToroDB: Server</name>
     <description>ToroDB standalone project.</description>
@@ -23,7 +23,7 @@
     </modules>
     
     <properties>
-        <torodb.engine.version>0.50.1-SNAPSHOT</torodb.engine.version>
+        <torodb.engine.version>0.50.3-SNAPSHOT</torodb.engine.version>
         <torodb.testing.version>0.1.0-SNAPSHOT</torodb.testing.version>
         
         <license.header.license>agpl</license.header.license>

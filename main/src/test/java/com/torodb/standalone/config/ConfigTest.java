@@ -269,7 +269,7 @@ public class ConfigTest {
             Role.HIDDEN_SLAVE, config.getProtocol().getMongo().getReplication().getRole().value());
     Assert.assertEquals(
         "/protocol/mongo/replication/syncSource has different value than that specified",
-        "localhost:27017", config.getProtocol().getMongo().getReplication().getSyncSource().value());
+        "localhost:27017", config.getProtocol().getMongo().getReplication().getSyncSource().value().get(0));
     Assert.assertTrue(
         "/protocol/mongo/replication/shards not defined",
         config.getProtocol().getMongo().getReplication().getShards() != null);
@@ -462,7 +462,7 @@ public class ConfigTest {
             Role.HIDDEN_SLAVE, config.getProtocol().getMongo().getReplication().getRole().value());
     Assert.assertEquals(
         "/protocol/mongo/replication/syncSource has different value than that specified",
-        "localhost:27017", config.getProtocol().getMongo().getReplication().getSyncSource().value());
+        "localhost:27017", config.getProtocol().getMongo().getReplication().getSyncSource().value().get(0));
     Assert.assertTrue(
         "/protocol/mongo/replication/shards not defined",
         config.getProtocol().getMongo().getReplication().getShards() != null);
@@ -537,7 +537,7 @@ public class ConfigTest {
             Role.HIDDEN_SLAVE, config.getProtocol().getMongo().getReplication().getRole().value());
     Assert.assertEquals(
         "/protocol/mongo/replication/syncSource has different value than that specified",
-        "localhost:27017", config.getProtocol().getMongo().getReplication().getSyncSource().value());
+        "localhost:27017", config.getProtocol().getMongo().getReplication().getSyncSource().value().get(0));
     Assert.assertTrue(
         "/protocol/mongo/replication/shards not defined",
         config.getProtocol().getMongo().getReplication().getShards() != null);
@@ -629,7 +629,7 @@ public class ConfigTest {
             Role.HIDDEN_SLAVE, config.getProtocol().getMongo().getReplication().getRole().value());
     Assert.assertEquals(
         "/protocol/mongo/replication/syncSource has different value than that specified",
-        "localhost:27017", config.getProtocol().getMongo().getReplication().getSyncSource().value());
+        "localhost:27017", config.getProtocol().getMongo().getReplication().getSyncSource().value().get(0));
     Assert.assertTrue(
         "/protocol/mongo/replication/shards not defined",
         config.getProtocol().getMongo().getReplication().getShards() != null);

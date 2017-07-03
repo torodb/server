@@ -25,6 +25,7 @@ import com.mongodb.client.MongoCollection;
 import com.torodb.standalone.utils.ClientSupplier;
 import org.bson.Document;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.junit.platform.runner.JUnitPlatform;
 import org.junit.runner.RunWith;
@@ -54,6 +55,7 @@ public class ServerServiceIT {
 
 
   @Test
+  @Disabled
   public void createCollection(ClientSupplier clientSupplier) {
     MongoClient client = clientSupplier.get();
 
@@ -70,6 +72,7 @@ public class ServerServiceIT {
   }
 
   @Test
+  @Disabled
   public void ping(ClientSupplier clientSupplier) {
     MongoClient client = clientSupplier.get();
 
